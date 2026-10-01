@@ -1055,6 +1055,75 @@
       opacity: 1;
     }
 
+    /* Floating WhatsApp Quick Contact Button */
+    .whatsapp-float-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9990;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: #ffffff;
+      padding: 0.65rem 1.15rem 0.65rem 0.85rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45), 0 2px 8px rgba(0, 0, 0, 0.6);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, background 0.25s ease;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .whatsapp-float-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6), 0 4px 14px rgba(0, 0, 0, 0.7);
+      background: linear-gradient(135deg, #2ae771, #14998a);
+      color: #ffffff;
+    }
+
+    .whatsapp-float-btn:active {
+      transform: translateY(-1px) scale(0.98);
+    }
+
+    .whatsapp-float-icon {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .whatsapp-float-text {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+      .whatsapp-float-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 0.75rem;
+        border-radius: 50%;
+        width: 52px;
+        height: 52px;
+        justify-content: center;
+      }
+
+      .whatsapp-float-text {
+        display: none;
+      }
+
+      .toast-msg {
+        bottom: 84px;
+        left: 20px;
+        right: 20px;
+        justify-content: center;
+      }
+    }
+
     /* Footer */
     .site-footer {
       text-align: center;
@@ -1389,7 +1458,7 @@
               <!-- Ticket Counter Box -->
               <div class="ticket-selector-card">
                 <div class="ticket-selector-top">
-                  <span class="ticket-selector-label">Number of Tickets</span>
+                  <span class="ticket-selector-label">Number of Tickets (Max 5)</span>
                   <span class="ticket-base-tag">Base: <strong>₹189</strong> / person</span>
                 </div>
 
@@ -1397,7 +1466,7 @@
                   <button type="button" class="btn-stepper" id="btnMinus"
                     aria-label="Decrease ticket count">&minus;</button>
                   <input type="number" id="ticketQuantity" name="tickets" class="stepper-input" value="1" min="1"
-                    step="1" required />
+                    max="5" step="1" required />
                   <button type="button" class="btn-stepper" id="btnPlus"
                     aria-label="Increase ticket count">&plus;</button>
                 </div>
@@ -1420,11 +1489,24 @@
               <!-- Form Inputs -->
               <div class="form-row">
                 <label for="userName" class="field-label">
-                  <span>Full Name</span>
+                  <span id="userNameLabelText">Full Name</span>
                   <span class="req">*</span>
                 </label>
                 <input type="text" id="userName" name="name" class="text-input" placeholder="e.g. Rahul Sen" required
                   autocomplete="name" />
+              </div>
+
+              <!-- Additional Guests Container (dynamically shown when tickets > 1) -->
+              <div id="additionalGuestsWrapper"
+                style="display: none; flex-direction: column; gap: 1.1rem; margin-top: 0.25rem;">
+                <div
+                  style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px dashed var(--border); padding-bottom: 0.45rem;">
+                  <span
+                    style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold-light);">Additional
+                    Guest Names</span>
+                  <span style="font-size: 0.75rem; color: var(--cream-muted);">Required for entry</span>
+                </div>
+                <div id="additionalGuestsFields" style="display: flex; flex-direction: column; gap: 1.1rem;"></div>
               </div>
 
               <div class="form-row">
@@ -1485,6 +1567,9 @@
                 </label>
                 <input type="text" id="utrNumberInput" name="utr" class="text-input"
                   placeholder="e.g. 4278XXXXXXXX (From your UPI payment receipt)" required maxlength="30" />
+                <div id="utrErrorMessage" style="display: none; color: #fca5a5; background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.4); border-radius: var(--radius-sm); padding: 0.6rem 0.85rem; font-size: 0.82rem; margin-top: 0.4rem; line-height: 1.4;">
+                  <!-- Dynamic duplicate UTR error rendered here -->
+                </div>
                 <span style="font-size: 0.78rem; color: var(--cream-muted); margin-top: 2px;">
                   You can find the 12-digit UTR or UPI Ref ID in your payment app's transaction history.
                 </span>
@@ -1522,7 +1607,7 @@
     <footer class="site-footer">
       <div class="footer-brand">Fursat-e-Barkat</div>
       <p>"Fursat me kuch hone wala hai."</p>
-      <p style="margin-top: 0.4rem;">&copy; 2026 Fursat-e-Barkat &bull; Artoli, Siliguri</p>
+      <p style="margin-top: 0.4rem;">&copy; 2026 Fursat-e-Barkat &bull; Aatoli, Siliguri</p>
       <div>
         <a href="https://wa.me/919382259674" target="_blank" rel="noopener noreferrer" class="footer-help-link">
           <span>Need help? Chat with Organizer on WhatsApp</span>
@@ -1531,6 +1616,19 @@
     </footer>
 
   </main>
+
+  <!-- Floating WhatsApp Contact Button -->
+  <a href="https://wa.me/919382259674?text=Hi%2C%20I%20have%20a%20query%20regarding%20the%20Fursat-e-Barkat%20event."
+    target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn"
+    aria-label="Chat with Fursat-e-Barkat Organizer on WhatsApp" title="Chat with Organizer">
+    <svg class="whatsapp-float-icon" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.1-.476-.15-.676.15s-.777.978-.953 1.179-.351.226-.652.075c-.301-.15-1.27-.468-2.42-1.493-.895-.798-1.5-1.783-1.676-2.084-.176-.301-.019-.464.132-.614.135-.135.301-.351.451-.527.15-.175.2-.301.301-.501.1-.2.05-.376-.025-.526s-.677-1.632-.928-2.235c-.244-.587-.492-.507-.677-.517-.175-.01-.376-.01-.576-.01s-.527.075-.803.376c-.276.301-1.053 1.028-1.053 2.508s1.078 2.909 1.229 3.11c.15.2 2.122 3.24 5.141 4.544.718.31 1.279.496 1.716.635.722.23 1.378.197 1.9.12.58-.087 1.78-.727 2.03-1.43.25-.702.25-1.303.175-1.43-.075-.125-.276-.2-.576-.35z" />
+      <path
+        d="M12.004 0C5.372 0 0 5.373 0 12.004c0 2.116.553 4.184 1.604 6.007L.05 24l6.168-1.583a11.97 11.97 0 0 0 5.786 1.488h.005c6.632 0 12.005-5.373 12.005-12.005C24.014 5.373 18.641 0 12.004 0zm0 21.996h-.004a9.983 9.983 0 0 1-5.088-1.39l-.365-.216-3.778.97.986-3.684-.237-.378a9.98 9.98 0 0 1-1.53-5.294C2 6.489 6.49 2 12.004 2c2.673 0 5.187 1.042 7.078 2.933A9.95 9.95 0 0 1 22.014 12c0 5.515-4.49 9.996-10.01 9.996z" />
+    </svg>
+    <span class="whatsapp-float-text">Chat with us</span>
+  </a>
 
   <!-- Notification Toast -->
   <div class="toast-msg" id="toastBox" role="alert" aria-live="assertive">
@@ -1550,6 +1648,8 @@
 
     // Configuration Constants
     const TICKET_BASE_PRICE = 189;
+    const MIN_TICKETS = 1;
+    const MAX_TICKETS = 5;
     const UPI_ID = "mainakroy273@oksbi";
     const PAYEE_NAME = "Fursat-e-Barkat";
     const WHATSAPP_PHONE = "919382259674";
@@ -1558,7 +1658,7 @@
      * GOOGLE APPS SCRIPT WEBHOOK URL:
      * Replace this placeholder with your deployed Google Apps Script Web App URL.
      */
-    const GOOGLE_SCRIPT_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbz2IVI7Ff4JCEOGb7u1tXMVRTcsYKuTKSSgA-8NlvNHE93sbnVDjG9XpgHOa3Z5hdU0/exec";
+    const GOOGLE_SCRIPT_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycby6zkDYn4VyVayLsEA7A5vMniveS1cnLXO_5rKU1n66JF293GXSGXk9xVVnxQq3FCtZ/exec";
 
     // DOM Elements
     const bookingForm = document.getElementById('ticketBookingForm');
@@ -1580,10 +1680,11 @@
 
     /**
      * Calculate Tickets & Group Discounts
-     * Logic: For every 5 tickets, 1 is free.
+     * Max: 5 tickets limit.
+     * Logic: For 5 tickets, 1 is free (4 paid + 1 free).
      */
     function computeTicketPricing(count) {
-      const tickets = Math.max(1, parseInt(count, 10) || 1);
+      const tickets = Math.min(MAX_TICKETS, Math.max(MIN_TICKETS, parseInt(count, 10) || 1));
       const freeTickets = Math.floor(tickets / 5);
       const paidTickets = tickets - freeTickets;
       const totalAmount = paidTickets * TICKET_BASE_PRICE;
@@ -1597,14 +1698,81 @@
     }
 
     /**
+     * Update Stepper Buttons Disabled/Enabled visual state
+     */
+    function updateStepperButtonsState(val) {
+      if (btnMinus) {
+        btnMinus.disabled = val <= MIN_TICKETS;
+        btnMinus.style.opacity = val <= MIN_TICKETS ? '0.4' : '1';
+        btnMinus.style.cursor = val <= MIN_TICKETS ? 'not-allowed' : 'pointer';
+      }
+      if (btnPlus) {
+        btnPlus.disabled = val >= MAX_TICKETS;
+        btnPlus.style.opacity = val >= MAX_TICKETS ? '0.4' : '1';
+        btnPlus.style.cursor = val >= MAX_TICKETS ? 'not-allowed' : 'pointer';
+      }
+    }
+
+    /**
+     * Dynamically generate guest name input fields for guests 2 to N
+     */
+    function updateGuestFields(ticketCount) {
+      const wrapper = document.getElementById('additionalGuestsWrapper');
+      const container = document.getElementById('additionalGuestsFields');
+      const guest1Label = document.getElementById('userNameLabelText');
+
+      if (guest1Label) {
+        guest1Label.textContent = ticketCount > 1 ? "Full Name (Guest 1 - Primary)" : "Full Name";
+      }
+
+      if (ticketCount <= 1) {
+        if (wrapper) wrapper.style.display = 'none';
+        if (container) container.innerHTML = '';
+        return;
+      }
+
+      if (wrapper) wrapper.style.display = 'flex';
+
+      // Save currently entered values so user does not lose input on ticket adjustments
+      const existingValues = {};
+      for (let i = 2; i <= MAX_TICKETS; i++) {
+        const el = document.getElementById(`guestName${i}`);
+        if (el) {
+          existingValues[i] = el.value;
+        }
+      }
+
+      // Generate inputs for Guest 2 up to ticketCount
+      let html = '';
+      for (let i = 2; i <= ticketCount; i++) {
+        const safeVal = (existingValues[i] || '').replace(/"/g, '&quot;');
+        html += `
+          <div class="form-row">
+            <label for="guestName${i}" class="field-label">
+              <span>Full Name (Guest ${i})</span>
+              <span class="req">*</span>
+            </label>
+            <input type="text" id="guestName${i}" name="guest_${i}" class="text-input" placeholder="e.g. Guest ${i} Full Name" value="${safeVal}" required autocomplete="name" />
+          </div>
+        `;
+      }
+      if (container) {
+        container.innerHTML = html;
+      }
+    }
+
+    /**
      * Update UI with dynamic calculation breakdown & update payment QR
      */
     function refreshTicketPricingUI() {
       let rawCount = parseInt(ticketInput.value, 10);
-      if (isNaN(rawCount) || rawCount < 1) {
-        rawCount = 1;
+      if (isNaN(rawCount) || rawCount < MIN_TICKETS) {
+        rawCount = MIN_TICKETS;
+      } else if (rawCount > MAX_TICKETS) {
+        rawCount = MAX_TICKETS;
       }
       ticketInput.value = rawCount;
+      updateStepperButtonsState(rawCount);
 
       const pricing = computeTicketPricing(rawCount);
 
@@ -1615,15 +1783,18 @@
       if (pricing.freeTickets > 0) {
         ticketMathSummary.textContent = `${pricing.totalTickets} Tickets (${pricing.paidTickets} Paid + ${pricing.freeTickets} Free)`;
         freeTicketIndicator.style.display = 'inline';
-        freeTicketIndicator.textContent = `🎁 ${pricing.freeTickets} Free Ticket${pricing.freeTickets > 1 ? 's' : ''} Applied! (Saved ₹${pricing.freeTickets * TICKET_BASE_PRICE})`;
-        totalHelpText.textContent = `₹${pricing.totalAmount} for ${pricing.totalTickets} guests (Group discount applied)`;
+        freeTicketIndicator.textContent = `🎁 1 Free Ticket Applied! (Saved ₹${pricing.freeTickets * TICKET_BASE_PRICE})`;
+        totalHelpText.textContent = `₹${pricing.totalAmount} for ${pricing.totalTickets} guests (Group offer applied)`;
       } else {
         ticketMathSummary.textContent = `${pricing.totalTickets} Ticket${pricing.totalTickets > 1 ? 's' : ''} × ₹${TICKET_BASE_PRICE}`;
         freeTicketIndicator.style.display = 'none';
         totalHelpText.textContent = `₹${pricing.totalAmount} for ${pricing.totalTickets} ${pricing.totalTickets === 1 ? 'guest' : 'guests'}`;
       }
 
-      // 3. Render UPI QR Code
+      // 3. Update dynamic guest fields
+      updateGuestFields(rawCount);
+
+      // 4. Render UPI QR Code
       generateQRCode(pricing.totalAmount);
     }
 
@@ -1675,17 +1846,19 @@
 
     // --- STEPPER BUTTON EVENTS ---
     btnMinus.addEventListener('click', () => {
-      let val = parseInt(ticketInput.value, 10) || 1;
-      if (val > 1) {
+      let val = parseInt(ticketInput.value, 10) || MIN_TICKETS;
+      if (val > MIN_TICKETS) {
         ticketInput.value = val - 1;
         refreshTicketPricingUI();
       }
     });
 
     btnPlus.addEventListener('click', () => {
-      let val = parseInt(ticketInput.value, 10) || 1;
-      ticketInput.value = val + 1;
-      refreshTicketPricingUI();
+      let val = parseInt(ticketInput.value, 10) || MIN_TICKETS;
+      if (val < MAX_TICKETS) {
+        ticketInput.value = val + 1;
+        refreshTicketPricingUI();
+      }
     });
 
     ticketInput.addEventListener('input', refreshTicketPricingUI);
@@ -1718,6 +1891,16 @@
       document.body.removeChild(input);
     }
 
+    // Realtime UTR input error clearing
+    const utrInputEl = document.getElementById('utrNumberInput');
+    const utrErrorBox = document.getElementById('utrErrorMessage');
+    if (utrInputEl) {
+      utrInputEl.addEventListener('input', () => {
+        if (utrErrorBox) utrErrorBox.style.display = 'none';
+        utrInputEl.style.borderColor = '';
+      });
+    }
+
     // --- FORM SUBMISSION (GOOGLE SHEETS + WHATSAPP REDIRECT) ---
     bookingForm.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -1732,14 +1915,36 @@
       const email = emailEl.value.trim();
       const phone = phoneEl.value.trim();
       const utr = utrEl.value.trim();
-      const ticketCount = parseInt(ticketInput.value, 10) || 1;
+      const ticketCount = Math.min(MAX_TICKETS, Math.max(MIN_TICKETS, parseInt(ticketInput.value, 10) || 1));
 
-      // Clean Validation
+      // Reset any previous UTR error UI
+      if (utrErrorBox) {
+        utrErrorBox.style.display = 'none';
+        utrErrorBox.textContent = '';
+      }
+      utrEl.style.borderColor = '';
+
+      // 1. Validate Primary Guest Name
       if (!name) {
-        alert('Please enter your full name.');
+        alert(ticketCount > 1 ? 'Please enter the full name for Guest 1 (Primary).' : 'Please enter your full name.');
         nameEl.focus();
         return;
       }
+
+      // 2. Validate Additional Guest Names (if more than 1 ticket)
+      const guestNames = [name];
+      for (let i = 2; i <= ticketCount; i++) {
+        const gEl = document.getElementById(`guestName${i}`);
+        const gVal = gEl ? gEl.value.trim() : '';
+        if (!gVal) {
+          alert(`Please enter the full name for Guest ${i}.`);
+          if (gEl) gEl.focus();
+          return;
+        }
+        guestNames.push(gVal);
+      }
+
+      // 3. Validate Contact & Verification Details
       if (!email || !email.includes('@')) {
         alert('Please enter a valid email address.');
         emailEl.focus();
@@ -1750,7 +1955,7 @@
         phoneEl.focus();
         return;
       }
-      if (!utr) {
+      if (!utr || utr.length < 6) {
         alert('Please enter the 12-digit UTR / Transaction ID from your payment.');
         utrEl.focus();
         return;
@@ -1765,27 +1970,43 @@
       const pricing = computeTicketPricing(ticketCount);
       const calculatedAmount = pricing.totalAmount;
 
-      // Loading state
+      // Fast Loading State
       btnSubmitForm.disabled = true;
       btnSubmitForm.classList.add('loading');
-      submitBtnText.textContent = "Processing...";
+      submitBtnText.textContent = "Verifying & Processing...";
 
-      // Step 1: Prepare FormData for Google Sheets Webhook
-      const formData = new FormData();
-      formData.append('Name', name);
-      formData.append('Email', email);
-      formData.append('Phone', phone);
-      formData.append('Tickets', ticketCount);
-      formData.append('PaidTickets', pricing.paidTickets);
-      formData.append('FreeTickets', pricing.freeTickets);
-      formData.append('TotalAmount', calculatedAmount);
-      formData.append('UTR', utr);
-      formData.append('Timestamp', new Date().toISOString());
+      // Formatted guest list for spreadsheet display
+      const guestNamesFormatted = guestNames.map((n, idx) => `${idx + 1}. ${n}`).join(', ');
 
-      // Step 2: Construct Required WhatsApp Message
+      // Payload for webhook
+      const payload = {
+        Name: name,
+        GuestNames: guestNamesFormatted,
+        Guest1: guestNames[0] || '',
+        Guest2: guestNames[1] || '',
+        Guest3: guestNames[2] || '',
+        Guest4: guestNames[3] || '',
+        Guest5: guestNames[4] || '',
+        Email: email,
+        Phone: phone,
+        Tickets: ticketCount,
+        PaidTickets: pricing.paidTickets,
+        FreeTickets: pricing.freeTickets,
+        TotalAmount: calculatedAmount,
+        UTR: utr,
+        Timestamp: new Date().toISOString()
+      };
+
+      // Construct WhatsApp Message
+      const guestListForWa = guestNames.map((n, idx) => `  ${idx + 1}. ${n}`).join('\n');
+      const attendeesBlock = ticketCount > 1
+        ? `Attendees (${ticketCount}):\n${guestListForWa}`
+        : `Attendee: ${name}`;
+
       const waMessage =
-        `Hi, I have made a payment for the Fursat-e-Barkat event.
-Name: ${name}
+`Hi, I have made a payment for the Fursat-e-Barkat event.
+Primary Contact: ${name}
+${attendeesBlock}
 Email: ${email}
 Phone: ${phone}
 Tickets Booked: ${ticketCount}
@@ -1796,24 +2017,35 @@ Please verify my payment and send my tickets.`;
       const encodedMessage = encodeURIComponent(waMessage);
       const waRedirectUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodedMessage}`;
 
-      // Send to Google Sheets webhook via fetch with mode: 'no-cors'
+      // Optimized async submission with instant duplicate check response
       fetch(GOOGLE_SCRIPT_WEBHOOK_URL, {
         method: 'POST',
-        mode: 'no-cors',
-        body: formData
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
       })
-        .then(() => {
-          window.location.href = waRedirectUrl;
+        .then((response) => response.json())
+        .then((data) => {
+          if (data && (data.status === 'error' || data.code === 'DUPLICATE_UTR')) {
+            // DUPLICATE UTR DETECTED: Show clear error in frontend
+            btnSubmitForm.disabled = false;
+            btnSubmitForm.classList.remove('loading');
+            submitBtnText.textContent = "Confirm Payment & Get Tickets";
+
+            if (utrErrorBox) {
+              utrErrorBox.style.display = 'block';
+              utrErrorBox.innerHTML = `⚠️ <strong>Duplicate UTR:</strong> ${data.message || 'This Transaction ID has already been used in a previous booking. Please check your payment receipt.'}`;
+            }
+            utrEl.style.borderColor = '#ef4444';
+            utrEl.focus();
+            displayToast('⚠️ This UTR was already used!');
+          } else {
+            // SUCCESS: Redirect instantly to WhatsApp
+            window.location.href = waRedirectUrl;
+          }
         })
         .catch((err) => {
-          console.warn('Webhook completed or caught network notice (redirecting to WhatsApp):', err);
+          console.warn('Direct read fallback (redirecting to WhatsApp):', err);
           window.location.href = waRedirectUrl;
-        })
-        .finally(() => {
-          // Fallback safety timeout in case redirect takes a moment
-          setTimeout(() => {
-            window.location.href = waRedirectUrl;
-          }, 800);
         });
     });
 
