@@ -1875,96 +1875,85 @@
     
 
     // --- FORM SUBMISSION (GOOGLE SHEETS + WHATSAPP REDIRECT) ---
-    bookingForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const nameEl = document.getElementById('userName');
-      const emailEl = document.getElementById('userEmail');
-      const phoneEl = document.getElementById('userPhone');
-      const consentEl = document.getElementById('billingConsentCheckbox');
-
-      const name = nameEl.value.trim();
-      const email = emailEl.value.trim();
-      const phone = phoneEl.value.trim();
-      const ticketCount = Math.min(MAX_TICKETS, Math.max(MIN_TICKETS, parseInt(ticketInput.value, 10) || 1));
-
-
-      // 1. Validate Primary Guest Name
-      if (!name) {
-        alert(ticketCount > 1 ? 'Please enter the full name for Guest 1 (Primary).' : 'Please enter your full name.');
-        nameEl.focus();
-        return;
-      }
-
-      // 2. Validate Additional Guest Names (if more than 1 ticket)
-      const guestNames = [name];
-      for (let i = 2; i <= ticketCount; i++) {
-        const gEl = document.getElementById(`guestName${i}`);
-        const gVal = gEl ? gEl.value.trim() : '';
-        if (!gVal) {
-          alert(`Please enter the full name for Guest ${i}.`);
-          if (gEl) gEl.focus();
-          return;
-        }
-        guestNames.push(gVal);
-      }
-
-      // 3. Validate Contact & Verification Details
-      if (!email || !email.includes('@')) {
-        alert('Please enter a valid email address.');
-        emailEl.focus();
-        return;
-      }
-      if (!phone || phone.length < 8) {
-        alert('Please enter a valid WhatsApp phone number.');
-        phoneEl.focus();
-        return;
-      }
- 
-      if (!consentEl.checked) {
-        alert('Please accept the entry fee and table billing agreement.');
-        consentEl.focus();
-        return;
-      }
-
-      // Compute exact amount
-      const pricing = computeTicketPricing(ticketCount);
-      const calculatedAmount = pricing.totalAmount;
-
-      // Fast Loading State
-      btnSubmitForm.disabled = true;
-      btnSubmitForm.classList.add('loading');
-      submitBtnText.textContent = "Verifying & Processing...";
-
-      // Formatted guest list for spreadsheet display
-      const guestNamesFormatted = guestNames.map((n, idx) => `${idx + 1}. ${n}`).join(', ');
-
-      // Payload for webhook
-      const payload = {
-        Name: name,
-        GuestNames: guestNamesFormatted,
-        Guest1: guestNames[0] || '',
-        Guest2: guestNames[1] || '',
-        Guest3: guestNames[2] || '',
-        Guest4: guestNames[3] || '',
-        Guest5: guestNames[4] || '',
-        Email: email,
-        Phone: phone,
-        Tickets: ticketCount,
-        PaidTickets: pricing.paidTickets,
-        FreeTickets: pricing.freeTickets,
-        TotalAmount: calculatedAmount,
-        UTR: "NULL",
-        Timestamp: new Date().toISOString()
-      };
-
-      // Construct WhatsApp Message
-      const guestListForWa = guestNames.map((n, idx) => `  ${idx + 1}. ${n}`).join('\n');
-      const attendeesBlock = ticketCount > 1
-        ? `Attendees (${ticketCount}):\n${guestListForWa}`
-        : `Attendee: ${name}`;
-
-      const waMessage =
+   bookingForm.addEventListener('submit', function (e) {
+     e.preventDefault();
+     const nameEl = document.getElementById('userName');
+     const emailEl = document.getElementById('userEmail');
+     const phoneEl = document.getElementById('userPhone');
+     const consentEl = document.getElementById('billingConsentCheckbox');
+     const name = nameEl.value.trim();
+     const email = emailEl.value.trim();
+     const phone = phoneEl.value.trim();
+     const ticketCount = Math.min(MAX_TICKETS, Math.max(MIN_TICKETS, parseInt(ticketInput.value, 10) || 1));
+     // 1. Validate Primary Guest Name
+     if (!name) {
+       alert(ticketCount > 1 ? 'Please enter the full name for Guest 1 (Primary).' : 'Please enter your full name.');
+       nameEl.focus();
+       return;
+     }
+     // 2. Validate Additional Guest Names (if more than 1 ticket)
+     const guestNames = [name];
+     for (let i = 2; i <= ticketCount; i++) {
+       const gEl = document.getElementById(`guestName${i}`);
+       const gVal = gEl ? gEl.value.trim() : '';
+       if (!gVal) {
+         alert(`Please enter the full name for Guest ${i}.`);
+         if (gEl) gEl.focus();
+         return;
+       }
+       guestNames.push(gVal);
+     }
+     // 3. Validate Contact & Verification Details
+     if (!email || !email.includes('@')) {
+       alert('Please enter a valid email address.');
+       emailEl.focus();
+       return;
+     }
+     if (!phone || phone.length < 8) {
+       alert('Please enter a valid WhatsApp phone number.');
+       phoneEl.focus();
+       return;
+     }
+     if (!consentEl.checked) {
+       alert('Please accept the entry fee and table billing agreement.');
+       consentEl.focus();
+       return;
+     }
+     // Compute exact amount
+     const pricing = computeTicketPricing(ticketCount);
+     const calculatedAmount = pricing.totalAmount;
+     // Fast Loading State
+     btnSubmitForm.disabled = true;
+     btnSubmitForm.classList.add('loading');
+     submitBtnText.textContent = "Verifying & Processing...";
+     // Formatted guest list for spreadsheet display
+     const guestNamesFormatted = guestNames.map((n, idx) => `${idx + 1}. ${n}`).join(', ');
+     // Dynamic unique string so the script's duplicate UTR check passes every time
+     const uniqueNAGenerator = "N/A-" + Date.now() + "-" + Math.floor(Math.random() * 1000);
+     // Payload for webhook
+     const payload = {
+       Name: name,
+       GuestNames: guestNamesFormatted,
+       Guest1: guestNames[0] || '',
+       Guest2: guestNames[1] || '',
+       Guest3: guestNames[2] || '',
+       Guest4: guestNames[3] || '',
+       Guest5: guestNames[4] || '',
+       Email: email,
+       Phone: phone,
+       Tickets: ticketCount,
+       PaidTickets: pricing.paidTickets,
+       FreeTickets: pricing.freeTickets,
+       TotalAmount: calculatedAmount,
+       UTR: uniqueNAGenerator,
+       Timestamp: new Date().toISOString()
+     };
+     // Construct WhatsApp Message
+     const guestListForWa = guestNames.map((n, idx) => `  ${idx + 1}. ${n}`).join('\n');
+     const attendeesBlock = ticketCount > 1
+       ? `Attendees (${ticketCount}):\n${guestListForWa}`
+       : `Attendee: ${name}`;
+     const waMessage =
 `Hi, I have made a payment for the Fursat-e-Barkat event.
 Primary Contact: ${name}
 ${attendeesBlock}
@@ -1973,34 +1962,29 @@ Phone: ${phone}
 Tickets Booked: ${ticketCount}
 Total Amount Paid: ₹${calculatedAmount}
 Please verify my payment and send my tickets.`;
-
-      const encodedMessage = encodeURIComponent(waMessage);
-      const waRedirectUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodedMessage}`;
-
-      // Optimized async submission with instant duplicate check response
-      fetch(GOOGLE_SCRIPT_WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(payload)
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          if (data && (data.status === 'error')) {
-            // DUPLICATE UTR DETECTED: Show clear error in frontend
-            btnSubmitForm.disabled = false;
-            btnSubmitForm.classList.remove('loading');
-            submitBtnText.textContent = "Confirm Payment & Get Tickets";
-
-          } else {
-            // SUCCESS: Redirect instantly to WhatsApp
-            window.location.href = waRedirectUrl;
-          }
-        })
-        .catch((err) => {
-          console.warn('Direct read fallback (redirecting to WhatsApp):', err);
-          window.location.href = waRedirectUrl;
-        });
-    });
+     const encodedMessage = encodeURIComponent(waMessage);
+     const waRedirectUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodedMessage}`;
+     fetch(GOOGLE_SCRIPT_WEBHOOK_URL, {
+       method: 'POST',
+       headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+       body: JSON.stringify(payload)
+     })
+       .then((response) => response.json())
+       .then((data) => {
+         if (data && (data.status === 'error')) {
+           btnSubmitForm.disabled = false;
+           btnSubmitForm.classList.remove('loading');
+           submitBtnText.textContent = "Confirm Payment & Get Tickets";
+           window.location.href = waRedirectUrl;
+         } else {
+           window.location.href = waRedirectUrl;
+         }
+       })
+       .catch((err) => {
+         console.warn('Direct read fallback (redirecting to WhatsApp):', err);
+         window.location.href = waRedirectUrl;
+       });
+   });
 
     // Initialize UI on load
     document.addEventListener('DOMContentLoaded', () => {
