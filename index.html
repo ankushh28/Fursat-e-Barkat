@@ -1555,27 +1555,7 @@
                 Works with Google Pay, PhonePe, Paytm, and all BHIM UPI apps.
               </p>
             </div>
-
-            <!-- FULL-WIDTH: Step 2 UTR Verification, Agreement & Submit -->
             <div class="verification-section">
-              <span class="step-tag">Step 2: Enter Transaction Details</span>
-
-              <div class="form-row">
-                <label for="utrNumberInput" class="field-label">
-                  <span>12-Digit UTR / Transaction ID</span>
-                  <span class="req">*</span>
-                </label>
-                <input type="text" id="utrNumberInput" name="utr" class="text-input"
-                  placeholder="e.g. 4278XXXXXXXX (From your UPI payment receipt)" required maxlength="30" />
-                <div id="utrErrorMessage" style="display: none; color: #fca5a5; background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.4); border-radius: var(--radius-sm); padding: 0.6rem 0.85rem; font-size: 0.82rem; margin-top: 0.4rem; line-height: 1.4;">
-                  <!-- Dynamic duplicate UTR error rendered here -->
-                </div>
-                <span style="font-size: 0.78rem; color: var(--cream-muted); margin-top: 2px;">
-                  You can find the 12-digit UTR or UPI Ref ID in your payment app's transaction history.
-                </span>
-              </div>
-
-              <!-- Mandatory Checkbox -->
               <label class="checkbox-agreement" for="billingConsentCheckbox">
                 <input type="checkbox" id="billingConsentCheckbox" class="custom-check" required />
                 <span>
