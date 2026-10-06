@@ -1872,14 +1872,7 @@
     }
 
     // Realtime UTR input error clearing
-    const utrInputEl = document.getElementById('utrNumberInput');
-    const utrErrorBox = document.getElementById('utrErrorMessage');
-    if (utrInputEl) {
-      utrInputEl.addEventListener('input', () => {
-        if (utrErrorBox) utrErrorBox.style.display = 'none';
-        utrInputEl.style.borderColor = '';
-      });
-    }
+    
 
     // --- FORM SUBMISSION (GOOGLE SHEETS + WHATSAPP REDIRECT) ---
     bookingForm.addEventListener('submit', function (e) {
@@ -1888,21 +1881,13 @@
       const nameEl = document.getElementById('userName');
       const emailEl = document.getElementById('userEmail');
       const phoneEl = document.getElementById('userPhone');
-      const utrEl = document.getElementById('utrNumberInput');
       const consentEl = document.getElementById('billingConsentCheckbox');
 
       const name = nameEl.value.trim();
       const email = emailEl.value.trim();
       const phone = phoneEl.value.trim();
-      const utr = utrEl.value.trim();
       const ticketCount = Math.min(MAX_TICKETS, Math.max(MIN_TICKETS, parseInt(ticketInput.value, 10) || 1));
 
-      // Reset any previous UTR error UI
-      if (utrErrorBox) {
-        utrErrorBox.style.display = 'none';
-        utrErrorBox.textContent = '';
-      }
-      utrEl.style.borderColor = '';
 
       // 1. Validate Primary Guest Name
       if (!name) {
@@ -1935,11 +1920,7 @@
         phoneEl.focus();
         return;
       }
-      if (!utr || utr.length < 6) {
-        alert('Please enter the 12-digit UTR / Transaction ID from your payment.');
-        utrEl.focus();
-        return;
-      }
+ 
       if (!consentEl.checked) {
         alert('Please accept the entry fee and table billing agreement.');
         consentEl.focus();
@@ -1973,7 +1954,7 @@
         PaidTickets: pricing.paidTickets,
         FreeTickets: pricing.freeTickets,
         TotalAmount: calculatedAmount,
-        UTR: utr,
+        UTR: "NULL",
         Timestamp: new Date().toISOString()
       };
 
@@ -1991,7 +1972,6 @@ Email: ${email}
 Phone: ${phone}
 Tickets Booked: ${ticketCount}
 Total Amount Paid: ₹${calculatedAmount}
-UTR Number: ${utr}
 Please verify my payment and send my tickets.`;
 
       const encodedMessage = encodeURIComponent(waMessage);
@@ -2005,19 +1985,12 @@ Please verify my payment and send my tickets.`;
       })
         .then((response) => response.json())
         .then((data) => {
-          if (data && (data.status === 'error' || data.code === 'DUPLICATE_UTR')) {
+          if (data && (data.status === 'error')) {
             // DUPLICATE UTR DETECTED: Show clear error in frontend
             btnSubmitForm.disabled = false;
             btnSubmitForm.classList.remove('loading');
             submitBtnText.textContent = "Confirm Payment & Get Tickets";
 
-            if (utrErrorBox) {
-              utrErrorBox.style.display = 'block';
-              utrErrorBox.innerHTML = `⚠️ <strong>Duplicate UTR:</strong> ${data.message || 'This Transaction ID has already been used in a previous booking. Please check your payment receipt.'}`;
-            }
-            utrEl.style.borderColor = '#ef4444';
-            utrEl.focus();
-            displayToast('⚠️ This UTR was already used!');
           } else {
             // SUCCESS: Redirect instantly to WhatsApp
             window.location.href = waRedirectUrl;
