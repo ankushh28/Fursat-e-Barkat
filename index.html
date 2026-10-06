@@ -1,471 +1,2059 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>Fursat-e-Barkat | 10th October at Artoli, Siliguri</title>
-    <meta name="description" content="Fursat-e-Barkat — intimate evening of live acoustic jam, karaoke, and warm conversations at Artoli Cafe, Siliguri." />
-    <meta name="theme-color" content="#0f0a07" />
-    <link rel="icon" type="image/png" href="logo.png" />
-    <style>
-      :root {
-        --bg-dark: #0f0a07;
-        --bg-surface: #18120e;
-        --bg-surface-elevated: #221a14;
-        --bg-surface-soft: #2b2019;
-        --bg-input: #140d09;
-        --gold: #e5b358;
-        --gold-light: #f6d89b;
-        --gold-dark: #b88628;
-        --cream: #faf3e8;
-        --cream-dim: #dfd3c3;
-        --cream-muted: #9e8e7e;
-        --border: rgba(229, 179, 88, 0.16);
-        --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.55);
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+
+  <!-- Primary SEO Meta Tags -->
+  <title>Fursat-e-Barkat | 10th October at Artoli, Siliguri</title>
+  <meta name="title" content="Fursat-e-Barkat | 10th October at Artoli, Siliguri" />
+  <meta name="description"
+    content="Fursat-e-Barkat - An intimate evening of live acoustic jamming, karaoke, board games, and genuine conversations over coffee & bites. 10th October at Artoli Cafe, Siliguri." />
+  <meta name="keywords"
+    content="Fursat-e-Barkat, Siliguri events, Artoli cafe, open mic Siliguri, live jam, karaoke night Siliguri, acoustic sessions Siliguri, evening gathering Siliguri, things to do in Siliguri" />
+  <meta name="author" content="Fursat-e-Barkat" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0f0a07" />
+
+  <!-- Favicon & Mobile Icons -->
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+  <link rel="shortcut icon" type="image/png" href="logo.png" />
+
+  <!-- Open Graph / WhatsApp / Facebook Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Fursat-e-Barkat" />
+  <meta property="og:title" content="Fursat-e-Barkat — 10th October at Artoli, Siliguri" />
+  <meta property="og:description"
+    content="Fursat me kuch hone wala hai. Join us for an evening of acoustic jam, karaoke, games, and warm conversations. Book tickets online (₹189)." />
+  <meta property="og:image" content="logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="Fursat-e-Barkat Logo" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fursat-e-Barkat | 10th October at Artoli, Siliguri" />
+  <meta name="twitter:description"
+    content="An intimate evening of live acoustic jam, karaoke, board games & warm conversations at Artoli Cafe, Siliguri." />
+  <meta name="twitter:image" content="logo.png" />
+
+  <!-- iOS & PWA Mobile Capabilities -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Fursat-e-Barkat" />
+
+  <!-- Schema.org Event Structured Data (Google Rich Snippets) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Fursat-e-Barkat",
+    "description": "An intimate evening gathering with live acoustic jamming, karaoke, board games, and cafe dining at Artoli, Siliguri.",
+    "image": ["logo.png"],
+    "startDate": "2026-10-11T17:00:00+05:30",
+    "endDate": "2026-10-11T22:30:00+05:30",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Artoli Cafe",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jamini Roy Rd, Ward 26, Babupara",
+        "addressLocality": "Siliguri",
+        "postalCode": "734005",
+        "addressRegion": "West Bengal",
+        "addressCountry": "IN"
+      }
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "189",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2026-10-01",
+      "url": "https://wa.me/919382259674"
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Fursat-e-Barkat",
+      "url": "https://wa.me/919382259674"
+    }
+  }
+  </script>
+
+  <!-- Google Fonts: Warm Editorial Serif + Crisp Clean Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600&display=swap"
+    rel="stylesheet" />
+
+  <!-- QRCode.js for live dynamic UPI QR Code -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM: WARM INDIE CAFE GATHERING
+       ========================================================================== */
+    :root {
+      --bg-dark: #0f0a07;
+      --bg-surface: #18120e;
+      --bg-surface-elevated: #221a14;
+      --bg-surface-soft: #2b2019;
+      --bg-input: #140d09;
+
+      --gold: #e5b358;
+      --gold-light: #f6d89b;
+      --gold-dark: #b88628;
+      --terracotta: #df744a;
+      --amber-warm: #f29c38;
+
+      --cream: #faf3e8;
+      --cream-dim: #dfd3c3;
+      --cream-muted: #9e8e7e;
+
+      --border: rgba(229, 179, 88, 0.16);
+      --border-focus: rgba(229, 179, 88, 0.55);
+      --border-subtle: rgba(255, 255, 255, 0.07);
+
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --radius-full: 9999px;
+
+      --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.55);
+      --shadow-glow: 0 0 25px rgba(229, 179, 88, 0.12);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--bg-dark);
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--cream);
+      font-family: var(--font-sans);
+      font-weight: 400;
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Ambient Warm Cafe Lighting */
+    .ambient-glow {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .ambient-glow::before {
+      content: '';
+      position: absolute;
+      top: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(800px, 120vw);
+      height: 550px;
+      background: radial-gradient(circle, rgba(229, 179, 88, 0.12) 0%, rgba(223, 116, 74, 0.06) 45%, transparent 70%);
+      filter: blur(70px);
+      border-radius: 50%;
+    }
+
+    .ambient-glow::after {
+      content: '';
+      position: absolute;
+      top: 60%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(242, 156, 56, 0.08) 0%, transparent 65%);
+      filter: blur(80px);
+      border-radius: 50%;
+    }
+
+    /* Top Navigation Bar */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(15, 10, 7, 0.85);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .top-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--cream);
+    }
+
+    .nav-logo-thumb {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--gold);
+      background: var(--bg-surface);
+    }
+
+    .nav-brand-text {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--cream);
+    }
+
+    .nav-cta-btn {
+      padding: 0.45rem 1.1rem;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+      color: #0c0805;
+      font-weight: 700;
+      font-size: 0.82rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 2px 10px rgba(229, 179, 88, 0.25);
+    }
+
+    .nav-cta-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(229, 179, 88, 0.4);
+    }
+
+    /* Container Wrapper */
+    .main-container {
+      position: relative;
+      z-index: 2;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 5rem;
+    }
+
+    /* ==========================================================================
+       HERO SECTION: AUTHENTIC, WARM & FOCUSED
+       ========================================================================== */
+    .hero-section {
+      text-align: center;
+      padding: 1.5rem 0 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-logo-wrapper {
+      position: relative;
+      margin-bottom: 1.25rem;
+      max-width: 280px;
+      width: 75%;
+    }
+
+    .hero-logo-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.6));
+      animation: softFloat 6s ease-in-out infinite;
+    }
+
+    @keyframes softFloat {
+
+      0%,
+      100% {
+        transform: translateY(0);
       }
 
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: var(--bg-dark);
-        color: var(--cream);
-        line-height: 1.6;
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    .hero-tagline-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.95rem;
+      background: rgba(229, 179, 88, 0.1);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      margin-bottom: 0.85rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.3rem, 7.5vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      color: var(--cream);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #fff7ea 20%, #f6d89b 55%, #dfa13d 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 3.5vw, 1.15rem);
+      color: var(--cream-dim);
+      max-width: 580px;
+      margin: 0 auto 1.75rem;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    /* Key Details Meta Chips */
+    .hero-details-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.65rem;
+      margin-bottom: 1.85rem;
+      width: 100%;
+      max-width: 650px;
+    }
+
+    .detail-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      font-size: 0.88rem;
+      color: var(--cream);
+      text-align: left;
+    }
+
+    .detail-chip-icon {
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .detail-chip strong {
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    .hero-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.95rem 2.25rem;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+      color: #0c0805;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(229, 179, 88, 0.35);
+      transition: all 0.25s ease;
+    }
+
+    .hero-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(229, 179, 88, 0.5);
+    }
+
+    /* ==========================================================================
+       GROUP SPECIAL OFFER CALLOUT
+       ========================================================================== */
+    .group-offer-card {
+      background: linear-gradient(135deg, #241a13 0%, #1a120d 100%);
+      border: 1.5px solid var(--gold);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      box-shadow: var(--shadow-card), 0 0 20px rgba(229, 179, 88, 0.1);
+    }
+
+    .offer-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-align: left;
+    }
+
+    .offer-badge-icon {
+      font-size: 1.85rem;
+      line-height: 1;
+      background: rgba(229, 179, 88, 0.15);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .offer-title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 0.15rem;
+    }
+
+    .offer-desc {
+      font-size: 0.88rem;
+      color: var(--cream-dim);
+      line-height: 1.4;
+    }
+
+    .offer-pill-tag {
+      padding: 0.4rem 0.9rem;
+      background: var(--gold);
+      color: #0c0805;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-radius: var(--radius-full);
+      white-space: nowrap;
+    }
+
+    /* ==========================================================================
+       EXPERIENCES SECTION: CLEAN, NATURAL, HUMAN
+       ========================================================================== */
+    .section-block {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .section-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 4.5vw, 2.1rem);
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: -0.01em;
+    }
+
+    .experiences-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .exp-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.35rem 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+      text-align: left;
+    }
+
+    .exp-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+      background: var(--bg-surface-elevated);
+    }
+
+    .exp-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+      width: 40px;
+      height: 40px;
+      background: rgba(229, 179, 88, 0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .exp-content h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.25rem;
+    }
+
+    .exp-content p {
+      font-size: 0.85rem;
+      color: var(--cream-muted);
+      line-height: 1.45;
+    }
+
+    /* ==========================================================================
+       VENUE & LOCATION SECTION
+       ========================================================================== */
+    .venue-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      text-align: left;
+    }
+
+    .venue-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .venue-name {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+
+    .venue-address {
+      font-size: 0.92rem;
+      color: var(--cream-dim);
+      line-height: 1.55;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+    }
+
+    .venue-address svg {
+      width: 20px;
+      height: 20px;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .venue-notes {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      padding: 0.85rem 1rem;
+      background: var(--bg-surface-elevated);
+      border-radius: var(--radius-sm);
+      border-left: 3px solid var(--gold);
+      font-size: 0.82rem;
+      color: var(--cream-muted);
+    }
+
+    .venue-notes strong {
+      color: var(--cream);
+    }
+
+    .map-frame-box {
+      width: 100%;
+      height: 260px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #000;
+    }
+
+    .map-frame-box iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ==========================================================================
+       RESERVATION & PAYMENT SECTION (CLEAN STEPPER UX)
+       ========================================================================== */
+    .booking-wrapper {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--gold);
+      border-radius: var(--radius-xl);
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+      box-shadow: var(--shadow-card), var(--shadow-glow);
+      text-align: left;
+    }
+
+    .booking-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    /* Left Form Column */
+    .booking-form-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+    }
+
+    /* Ticket Count Selector Component */
+    .ticket-selector-card {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .ticket-selector-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ticket-selector-label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--cream);
+    }
+
+    .ticket-base-tag {
+      font-size: 0.85rem;
+      color: var(--cream-muted);
+    }
+
+    .ticket-base-tag strong {
+      color: var(--gold-light);
+    }
+
+    .stepper-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn-stepper {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-surface-soft);
+      border: 1px solid var(--border);
+      color: var(--cream);
+      font-size: 1.4rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-stepper:hover {
+      background: var(--gold);
+      color: #0c0805;
+    }
+
+    .btn-stepper:active {
+      transform: scale(0.95);
+    }
+
+    .stepper-input {
+      width: 80px;
+      height: 48px;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: var(--font-sans);
+      color: var(--gold-light);
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      outline: none;
+      -moz-appearance: textfield;
+    }
+
+    .stepper-input::-webkit-outer-spin-button,
+    .stepper-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Breakdown & Free ticket indicator */
+    .calc-status-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.65rem 0.85rem;
+      background: rgba(229, 179, 88, 0.08);
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      color: var(--cream-dim);
+    }
+
+    .free-ticket-callout {
+      color: #4ade80;
+      font-weight: 700;
+      display: none;
+    }
+
+    /* Live Big Total Display */
+    .total-banner {
+      background: linear-gradient(135deg, #2b1f17, #1b130e);
+      border: 1.5px solid var(--gold);
+      border-radius: var(--radius-md);
+      padding: 1.15rem 1.35rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .total-label-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .total-title-text {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+    }
+
+    .total-sub-text {
+      font-size: 0.78rem;
+      color: var(--gold-light);
+    }
+
+    .total-amount-number {
+      font-size: 2.1rem;
+      font-weight: 800;
+      font-family: var(--font-sans);
+      color: var(--gold-light);
+      line-height: 1;
+    }
+
+    /* Form Fields */
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .field-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--cream-dim);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .req {
+      color: var(--amber-warm);
+    }
+
+    .text-input {
+      width: 100%;
+      height: 48px;
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0 1rem;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--cream);
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .text-input::placeholder {
+      color: #6d5e50;
+    }
+
+    .text-input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(229, 179, 88, 0.15);
+    }
+
+    /* Right Payment & QR Column */
+    .booking-payment-col {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.2rem;
+    }
+
+    .step-tag {
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .qr-container-box {
+      width: 200px;
+      height: 200px;
+      background: #ffffff;
+      padding: 10px;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--gold);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    .qr-container-box img,
+    .qr-container-box canvas {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .payment-info-box {
+      width: 100%;
+      background: var(--bg-surface-soft);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .pay-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .pay-label {
+      color: var(--cream-muted);
+    }
+
+    .pay-val {
+      color: var(--cream);
+      font-weight: 600;
+    }
+
+    .copy-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: rgba(229, 179, 88, 0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .copy-pill-btn:hover {
+      background: var(--gold);
+      color: #0c0805;
+    }
+
+    /* Bottom Verification & Confirmation Area */
+    .verification-section {
+      grid-column: 1 / -1;
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .checkbox-agreement {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      cursor: pointer;
+      user-select: none;
+      font-size: 0.88rem;
+      color: var(--cream-dim);
+      line-height: 1.5;
+    }
+
+    .custom-check {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      border: 1.5px solid var(--gold);
+      border-radius: 6px;
+      background: var(--bg-input);
+      cursor: pointer;
+      flex-shrink: 0;
+      margin-top: 1px;
+      position: relative;
+      transition: background-color 0.2s ease;
+    }
+
+    .custom-check:checked {
+      background: var(--gold);
+    }
+
+    .custom-check:checked::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #0c0805;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .custom-check:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(229, 179, 88, 0.4);
+    }
+
+    /* Submit CTA Button */
+    .confirm-btn {
+      width: 100%;
+      height: 56px;
+      border: none;
+      border-radius: var(--radius-full);
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 60%, var(--gold-dark) 100%);
+      color: #0c0805;
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      box-shadow: 0 6px 25px rgba(229, 179, 88, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    }
+
+    .confirm-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(229, 179, 88, 0.5);
+    }
+
+    .confirm-btn:active:not(:disabled) {
+      transform: translateY(1px);
+    }
+
+    .confirm-btn:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .spinner {
+      width: 20px;
+      height: 20px;
+      border: 2.5px solid rgba(12, 8, 5, 0.3);
+      border-top-color: #0c0805;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .confirm-btn.loading .spinner {
+      display: block;
+    }
+
+    /* Toast Notification */
+    .toast-msg {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      left: auto;
+      max-width: 90vw;
+      background: #1f1712;
+      border: 1px solid var(--gold);
+      color: var(--cream);
+      padding: 0.85rem 1.25rem;
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      font-size: 0.88rem;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      transform: translateY(80px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    .toast-msg.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Floating WhatsApp Quick Contact Button */
+    .whatsapp-float-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9990;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: #ffffff;
+      padding: 0.65rem 1.15rem 0.65rem 0.85rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45), 0 2px 8px rgba(0, 0, 0, 0.6);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, background 0.25s ease;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .whatsapp-float-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6), 0 4px 14px rgba(0, 0, 0, 0.7);
+      background: linear-gradient(135deg, #2ae771, #14998a);
+      color: #ffffff;
+    }
+
+    .whatsapp-float-btn:active {
+      transform: translateY(-1px) scale(0.98);
+    }
+
+    .whatsapp-float-icon {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .whatsapp-float-text {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+      .whatsapp-float-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 0.75rem;
+        border-radius: 50%;
+        width: 52px;
+        height: 52px;
+        justify-content: center;
       }
 
-      .container {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 24px 18px 80px;
+      .whatsapp-float-text {
+        display: none;
       }
 
-      .hero {
-        text-align: center;
-        padding: 36px 0 20px;
+      .toast-msg {
+        bottom: 84px;
+        left: 20px;
+        right: 20px;
+        justify-content: center;
+      }
+    }
+
+    /* Footer */
+    .site-footer {
+      text-align: center;
+      padding: 2.5rem 0 1rem;
+      border-top: 1px solid var(--border-subtle);
+      color: var(--cream-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 0.35rem;
+    }
+
+    .footer-help-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--gold-light);
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 0.75rem;
+    }
+
+    .footer-help-link:hover {
+      text-decoration: underline;
+    }
+
+    /* ==========================================================================
+       MOBILE RESPONSIVENESS & PROPER ALIGNMENT FIXES
+       ========================================================================== */
+    @media (max-width: 768px) {
+      .main-container {
+        padding: 1rem 1rem 4rem;
       }
 
-      .logo-wrap {
-        width: min(220px, 60vw);
-        margin: 0 auto 18px;
+      .hero-logo-wrapper {
+        max-width: 220px;
+        width: 65%;
       }
 
-      .logo-wrap img {
-        width: 100%;
-        height: auto;
-        display: block;
+      .group-offer-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.2rem;
       }
 
-      .tag {
-        display: inline-block;
-        padding: 8px 16px;
-        border-radius: 999px;
-        background: rgba(229, 179, 88, 0.1);
-        border: 1px solid var(--border);
-        color: var(--gold-light);
-        font-weight: 700;
-        font-size: 12px;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
+      .offer-left {
+        align-items: flex-start;
       }
 
-      h1 {
-        font-family: Georgia, serif;
-        font-size: clamp(2.2rem, 5vw, 3.6rem);
-        line-height: 1.1;
-        margin: 18px 0 10px;
+      .offer-pill-tag {
+        align-self: flex-start;
       }
 
-      h1 span {
-        color: var(--gold-light);
+      .venue-card {
+        grid-template-columns: 1fr;
+        padding: 1.25rem;
       }
 
-      .sub {
-        max-width: 680px;
-        margin: 0 auto;
-        color: var(--cream-dim);
-        font-size: 1rem;
-      }
-
-      .booking-box {
-        background: var(--bg-surface);
-        border: 1.5px solid var(--gold);
-        border-radius: 24px;
-        box-shadow: var(--shadow-card);
-        padding: clamp(18px, 4vw, 34px);
-        margin-top: 34px;
+      .map-frame-box {
+        height: 220px;
       }
 
       .booking-layout {
-        display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 24px;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
       }
 
-      .field-row {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        margin-bottom: 16px;
+      .booking-wrapper {
+        padding: 1.25rem;
+        border-radius: var(--radius-lg);
       }
 
-      label {
-        color: var(--cream-dim);
-        font-size: 0.86rem;
-        font-weight: 700;
-      }
-
-      .required { color: #f29c38; }
-
-      input, select {
-        width: 100%;
-        height: 52px;
-        background: var(--bg-input);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        color: var(--cream);
-        font-size: 1rem;
-        padding: 0 14px;
-        outline: none;
-      }
-
-      input:focus, select:focus {
-        border-color: var(--gold);
-        box-shadow: 0 0 0 3px rgba(229, 179, 88, 0.14);
-      }
-
-      .ticket-box {
-        background: var(--bg-surface-elevated);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 18px;
-        margin-bottom: 18px;
-      }
-
-      .ticket-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 14px;
-      }
-
-      .ticket-label {
-        font-weight: 700;
-        font-size: 0.96rem;
-      }
-
-      .ticket-base {
-        color: var(--cream-muted);
-        font-size: 0.84rem;
-      }
-
-      .stepper {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .stepper button {
-        width: 46px;
-        height: 46px;
-        border: 1px solid var(--border);
-        border-radius: 10px;
-        background: var(--bg-surface-soft);
-        color: var(--cream);
-        font-size: 1.4rem;
-        font-weight: 700;
-        cursor: pointer;
-      }
-
-      .stepper input {
-        width: 84px;
-        height: 46px;
-        text-align: center;
-        font-weight: 800;
-        font-size: 1.5rem;
-        color: var(--gold-light);
-      }
-
-      .calc-status {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: rgba(229, 179, 88, 0.08);
-        border-radius: 10px;
-        padding: 10px 14px;
-        color: var(--cream-dim);
-        font-size: 0.85rem;
-      }
-
-      .total-box {
-        margin-top: 18px;
-        background: linear-gradient(135deg, #2b1f17, #1b130e);
-        border: 1px solid var(--gold);
-        border-radius: 18px;
-        padding: 18px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .total-label {
-        font-size: 0.76rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--cream-muted);
-      }
-
-      .total-amt {
-        font-size: clamp(1.8rem, 4vw, 2.5rem);
-        font-weight: 800;
-        color: var(--gold-light);
-      }
-
-      .side-card {
-        background: var(--bg-surface-elevated);
-        border: 1px solid var(--border);
-        border-radius: 18px;
-        padding: 26px 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .side-card .step {
-        font-size: 0.72rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--gold);
-        font-weight: 800;
-      }
-
-      .qr {
-        width: 210px;
-        height: 210px;
-        background: white;
-        border-radius: 18px;
-        display: flex;
-        align-items: center;
+      .toast-msg {
+        left: 20px;
+        right: 20px;
         justify-content: center;
-        margin: 18px 0 12px;
-        border: 2px solid var(--gold);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 2.1rem;
       }
 
-      .qr img {
-        width: 180px;
-        height: 180px;
-        display: block;
+      .hero-subtitle {
+        font-size: 0.95rem;
       }
 
-      .payment-box {
+      .detail-chip {
         width: 100%;
-        background: var(--bg-surface-soft);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 14px;
-        margin-top: 8px;
+        justify-content: flex-start;
       }
 
-      .pay-row {
-        display: flex;
+      .stepper-container {
         justify-content: space-between;
-        align-items: center;
-        font-size: 0.85rem;
-        margin-bottom: 8px;
       }
 
-      .pay-row:last-child { margin-bottom: 0; }
-
-      .pay-label { color: var(--cream-muted); }
-      .pay-value { color: var(--cream); font-weight: 700; }
-
-      .note {
-        margin-top: 18px;
-        color: var(--cream-dim);
-        font-size: 0.88rem;
+      .stepper-input {
+        flex-grow: 1;
       }
 
-      .btn {
-        width: 100%;
-        background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
-        color: #0c0805;
-        border: none;
-        border-radius: 999px;
-        height: 56px;
-        font-size: 1.04rem;
-        font-weight: 800;
-        cursor: pointer;
-        box-shadow: 0 6px 25px rgba(229, 179, 88, 0.35);
-        margin-top: 18px;
+      .total-amount-number {
+        font-size: 1.85rem;
       }
+    }
+  </style>
+</head>
 
-      .btn:hover { filter: brightness(1.03); }
+<body>
 
-      @media (max-width: 760px) {
-        .booking-layout { grid-template-columns: 1fr; }
-        .side-card { order: -1; }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <header class="hero">
-        <div class="logo-wrap">
-          <img src="logo.png" alt="Fursat-e-Barkat logo" />
+  <!-- Background Lighting Effect -->
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <!-- Top Sticky Bar -->
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <a href="#" class="nav-brand">
+        <img src="logo.png" alt="Fursat-e-Barkat Logo" class="nav-logo-thumb" />
+        <span class="nav-brand-text">Fursat-e-Barkat</span>
+      </a>
+      <a href="#reserve" class="nav-cta-btn">Book Tickets</a>
+    </div>
+  </nav>
+
+  <main class="main-container">
+
+    <!-- ==========================================================================
+         HERO SECTION WITH OFFICIAL LOGO
+         ========================================================================== -->
+    <header class="hero-section">
+      <div class="hero-logo-wrapper">
+        <img src="logo.png" alt="Fursat-e-Barkat" class="hero-logo-img" />
+      </div>
+
+      <div class="hero-tagline-pill">
+        <span>✨</span>
+        <span>Fursat me kuch hone wala hai</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span>Fursat-e-Barkat</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        An intimate evening of live acoustic jams, karaoke, table games, and warm conversations over coffee & bites.
+      </p>
+
+      <!-- Event Quick Details Chips -->
+      <div class="hero-details-row">
+        <div class="detail-chip">
+          <span class="detail-chip-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </span>
+          <span><strong>11th October</strong> &bull; Evening Session</span>
         </div>
-        <div class="tag">Fursat me kuch hone wala hai</div>
-        <h1>Fursat-e-Barkat <span>Live</span></h1>
-        <p class="sub">
-          An intimate evening of live acoustic jams, karaoke, board games, and warm conversations over coffee & bites.
-        </p>
-      </header>
 
-      <section class="booking-box">
-        <form id="bookingForm">
-          <div class="booking-layout">
-            <div>
-              <div class="ticket-box">
-                <div class="ticket-row">
-                  <div>
-                    <div class="ticket-label">Number of tickets</div>
-                    <div class="ticket-base">₹189 per ticket</div>
-                  </div>
-                </div>
+        <div class="detail-chip">
+          <span class="detail-chip-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </span>
+          <span><strong>Artoli</strong>, Siliguri</span>
+        </div>
 
-                <div class="stepper">
-                  <button type="button" id="minusBtn" aria-label="Decrease tickets">−</button>
-                  <input id="ticketCount" type="number" min="1" max="5" value="1" readonly />
-                  <button type="button" id="plusBtn" aria-label="Increase tickets">+</button>
-                </div>
+        <div class="detail-chip">
+          <span class="detail-chip-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+              <line x1="7" y1="7" x2="7.01" y2="7"></line>
+            </svg>
+          </span>
+          <span>Entry: <strong>₹189</strong> / person</span>
+        </div>
+      </div>
 
-                <div class="calc-status" style="margin-top: 14px;">
-                  <span>Entry total</span>
-                  <strong id="calcText">₹189</strong>
-                </div>
-              </div>
+      <a href="#reserve" class="hero-cta-btn">
+        <span>Get Your Tickets</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <polyline points="19 12 12 19 5 12"></polyline>
+        </svg>
+      </a>
+    </header>
 
-              <div class="field-row">
-                <label for="name">Full name <span class="required">*</span></label>
-                <input id="name" name="name" type="text" placeholder="Your name" required />
-              </div>
-
-              <div class="field-row">
-                <label for="phone">Phone number <span class="required">*</span></label>
-                <input id="phone" name="phone" type="tel" placeholder="10-digit mobile number" required />
-              </div>
-
-              <div class="field-row">
-                <label for="city">City</label>
-                <input id="city" name="city" type="text" placeholder="Siliguri" />
-              </div>
-
-              <div class="field-row">
-                <label for="note">Any note?</label>
-                <input id="note" name="note" type="text" placeholder="Optional" />
-              </div>
-
-              <div class="total-box">
-                <div>
-                  <div class="total-label">Total payable</div>
-                </div>
-                <div class="total-amt" id="totalAmount">₹189</div>
-              </div>
-            </div>
-
-            <aside class="side-card">
-              <div class="step">Step 2</div>
-              <div class="qr">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=ankushh28@upi&pn=Fursat-e-Barkat&am=189&cu=INR" alt="UPI QR code" />
-              </div>
-
-              <div class="payment-box">
-                <div class="pay-row">
-                  <span class="pay-label">UPI ID</span>
-                  <span class="pay-value">ankushh28@upi</span>
-                </div>
-                <div class="pay-row">
-                  <span class="pay-label">Name</span>
-                  <span class="pay-value">Fursat-e-Barkat</span>
-                </div>
-                <div class="pay-row">
-                  <span class="pay-label">Amount</span>
-                  <span class="pay-value" id="payAmount">₹189</span>
-                </div>
-              </div>
-
-              <div class="note">
-                After you pay, we will ask you to send the payment screenshot on WhatsApp for confirmation.
-              </div>
-            </aside>
-          </div>
-
-          <button type="submit" class="btn">Continue to WhatsApp</button>
-        </form>
-      </section>
+    <!-- ==========================================================================
+         GROUP OF 5 SPECIAL OFFER BANNER
+         ========================================================================== -->
+    <div class="group-offer-card">
+      <div class="offer-left">
+        <div class="offer-badge-icon">🎁</div>
+        <div>
+          <h2 class="offer-title">Group of 5? 1 ticket is on us!</h2>
+          <p class="offer-desc">Bring your gang! For every 5 tickets booked, 1 ticket is completely complimentary.</p>
+        </div>
+      </div>
+      <div class="offer-pill-tag">Group Special</div>
     </div>
 
-    <script>
-      const pricePerTicket = 189;
-      const ticketCount = document.getElementById('ticketCount');
-      const totalAmount = document.getElementById('totalAmount');
-      const payAmount = document.getElementById('payAmount');
-      const calcText = document.getElementById('calcText');
-      const form = document.getElementById('bookingForm');
+    <!-- ==========================================================================
+         WHAT'S HAPPENING SECTION
+         ========================================================================== -->
+    <section class="section-block">
+      <div class="section-header">
+        <span class="section-eyebrow">The Evening Vibe</span>
+        <h2 class="section-heading">What Awaits You</h2>
+      </div>
 
-      function updateTotal() {
-        const count = Math.max(1, Number(ticketCount.value) || 1);
-        const total = count * pricePerTicket;
-        totalAmount.textContent = '₹' + total;
-        payAmount.textContent = '₹' + total;
-        calcText.textContent = '₹' + total;
+      <div class="experiences-grid">
+        <div class="exp-card">
+          <div class="exp-icon">🎸</div>
+          <div class="exp-content">
+            <h3>Open Jam & Acoustic</h3>
+            <p>Bring your guitar, voice, or percussion. Unfiltered acoustic harmonies with fellow music lovers.</p>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-icon">🎤</div>
+          <div class="exp-content">
+            <h3>Karaoke Hours</h3>
+            <p>Sing out loud to your favorite Bollywood retro, indie tracks, and timeless pop anthems.</p>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-icon">🎲</div>
+          <div class="exp-content">
+            <h3>Social & Board Games</h3>
+            <p>Interactive table games, trivia rounds, and fun activities designed for laughter.</p>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-icon">☕</div>
+          <div class="exp-content">
+            <h3>Food & Warm Drinks</h3>
+            <p>Fresh brews, teas, and delicious cafe bites at Artoli (Min table billing ₹249).</p>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-icon">📸</div>
+          <div class="exp-content">
+            <h3>Photo Sessions</h3>
+            <p>Warm ambient corners & photo spots to capture polaroid-worthy evening memories.</p>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-icon">💬</div>
+          <div class="exp-content">
+            <h3>Genuine Interaction</h3>
+            <p>A screen-free space to meet creative thinkers, musicians, and warm people in town.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         VENUE & LOCATION
+         ========================================================================== -->
+    <section class="section-block">
+      <div class="section-header">
+        <span class="section-eyebrow">Location</span>
+        <h2 class="section-heading">Venue & Map</h2>
+      </div>
+
+      <div class="venue-card">
+        <div class="venue-info">
+          <h3 class="venue-name">Artoli, Siliguri</h3>
+
+          <div class="venue-address">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <div>
+              Jamini Roy Rd, Ward 26, Babupara,<br />
+              Siliguri, West Bengal 734005
+            </div>
+          </div>
+
+          <div class="venue-notes">
+            <span><strong>Date:</strong> 11th October (Evening)</span>
+            <span><strong>Entry Fee:</strong> ₹189 / ticket</span>
+            <span><strong>Table Billing:</strong> Min. ₹249 on food & beverages (No cover charges)</span>
+          </div>
+        </div>
+
+        <div class="map-frame-box">
+          <iframe title="Artoli Location Map"
+            src="https://maps.google.com/maps?q=Jamini+Roy+Rd,+Ward+26,+Babupara,+Siliguri,+West+Bengal+734005&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         BOOKING & PAYMENT SECTION (STEPPER UX)
+         ========================================================================== -->
+    <section class="section-block" id="reserve">
+      <div class="section-header">
+        <span class="section-eyebrow">Book Your Spot</span>
+        <h2 class="section-heading">Tickets & Payment</h2>
+      </div>
+
+      <div class="booking-wrapper">
+        <form id="ticketBookingForm" novalidate>
+          <div class="booking-layout">
+
+            <!-- LEFT: Ticket Selection & Personal Details -->
+            <div class="booking-form-col">
+
+              <!-- Ticket Counter Box -->
+              <div class="ticket-selector-card">
+                <div class="ticket-selector-top">
+                  <span class="ticket-selector-label">Number of Tickets (Max 5)</span>
+                  <span class="ticket-base-tag">Base: <strong>₹189</strong> / person</span>
+                </div>
+
+                <div class="stepper-container">
+                  <button type="button" class="btn-stepper" id="btnMinus"
+                    aria-label="Decrease ticket count">&minus;</button>
+                  <input type="number" id="ticketQuantity" name="tickets" class="stepper-input" value="1" min="1"
+                    max="5" step="1" required />
+                  <button type="button" class="btn-stepper" id="btnPlus"
+                    aria-label="Increase ticket count">&plus;</button>
+                </div>
+
+                <div class="calc-status-line">
+                  <span id="ticketMathSummary">1 Ticket &times; ₹189</span>
+                  <span class="free-ticket-callout" id="freeTicketIndicator">🎁 1 Free Ticket Applied!</span>
+                </div>
+              </div>
+
+              <!-- High Contrast Live Price Banner -->
+              <div class="total-banner">
+                <div class="total-label-wrap">
+                  <span class="total-title-text">Total Amount to Pay</span>
+                  <span class="total-sub-text" id="totalHelpText">₹189 for 1 guest</span>
+                </div>
+                <div class="total-amount-number" id="finalAmountDisplay">₹189</div>
+              </div>
+
+              <!-- Form Inputs -->
+              <div class="form-row">
+                <label for="userName" class="field-label">
+                  <span id="userNameLabelText">Full Name</span>
+                  <span class="req">*</span>
+                </label>
+                <input type="text" id="userName" name="name" class="text-input" placeholder="e.g. Rahul Sen" required
+                  autocomplete="name" />
+              </div>
+
+              <!-- Additional Guests Container (dynamically shown when tickets > 1) -->
+              <div id="additionalGuestsWrapper"
+                style="display: none; flex-direction: column; gap: 1.1rem; margin-top: 0.25rem;">
+                <div
+                  style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px dashed var(--border); padding-bottom: 0.45rem;">
+                  <span
+                    style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold-light);">Additional
+                    Guest Names</span>
+                  <span style="font-size: 0.75rem; color: var(--cream-muted);">Required for entry</span>
+                </div>
+                <div id="additionalGuestsFields" style="display: flex; flex-direction: column; gap: 1.1rem;"></div>
+              </div>
+
+              <div class="form-row">
+                <label for="userEmail" class="field-label">
+                  <span>Email Address</span>
+                  <span class="req">*</span>
+                </label>
+                <input type="email" id="userEmail" name="email" class="text-input" placeholder="e.g. rahul@gmail.com"
+                  required autocomplete="email" />
+              </div>
+
+              <div class="form-row">
+                <label for="userPhone" class="field-label">
+                  <span>WhatsApp Number</span>
+                  <span class="req">*</span>
+                </label>
+                <input type="tel" id="userPhone" name="phone" class="text-input" placeholder="e.g. 9876543210" required
+                  autocomplete="tel" />
+              </div>
+
+            </div>
+
+            <!-- RIGHT: UPI QR Code & Payee Details -->
+            <div class="booking-payment-col">
+              <span class="step-tag">Step 1: Scan & Pay via UPI</span>
+
+              <div class="qr-container-box" id="upiQrBox" title="Scan to pay via GPay / PhonePe / Paytm / BHIM">
+                <!-- Dynamic QR code generated by JS -->
+              </div>
+
+              <div class="payment-info-box">
+                <div class="pay-row">
+                  <span class="pay-label">Payee:</span>
+                  <span class="pay-val">Fursat-e-Barkat</span>
+                </div>
+                <div class="pay-row" style="margin-top: 4px;">
+                  <span class="pay-label">UPI ID:</span>
+                  <div style="display: flex; align-items: center; gap: 6px;">
+                    <span class="pay-val" style="font-family: monospace;" id="upiIdString">mainakroy273@oksbi</span>
+                    <button type="button" class="copy-pill-btn" id="btnCopyUpiId">Copy</button>
+                  </div>
+                </div>
+              </div>
+
+              <p style="font-size: 0.78rem; color: var(--cream-muted); line-height: 1.4;">
+                Works with Google Pay, PhonePe, Paytm, and all BHIM UPI apps.
+              </p>
+            </div>
+
+            <!-- FULL-WIDTH: Step 2 UTR Verification, Agreement & Submit -->
+            <div class="verification-section">
+              <span class="step-tag">Step 2: Enter Transaction Details</span>
+
+              <div class="form-row">
+                <label for="utrNumberInput" class="field-label">
+                  <span>12-Digit UTR / Transaction ID</span>
+                  <span class="req">*</span>
+                </label>
+                <input type="text" id="utrNumberInput" name="utr" class="text-input"
+                  placeholder="e.g. 4278XXXXXXXX (From your UPI payment receipt)" required maxlength="30" />
+                <div id="utrErrorMessage" style="display: none; color: #fca5a5; background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.4); border-radius: var(--radius-sm); padding: 0.6rem 0.85rem; font-size: 0.82rem; margin-top: 0.4rem; line-height: 1.4;">
+                  <!-- Dynamic duplicate UTR error rendered here -->
+                </div>
+                <span style="font-size: 0.78rem; color: var(--cream-muted); margin-top: 2px;">
+                  You can find the 12-digit UTR or UPI Ref ID in your payment app's transaction history.
+                </span>
+              </div>
+
+              <!-- Mandatory Checkbox -->
+              <label class="checkbox-agreement" for="billingConsentCheckbox">
+                <input type="checkbox" id="billingConsentCheckbox" class="custom-check" required />
+                <span>
+                  I agree to the entry fee of ₹189 and minimum table billing of ₹249 (No cover charges included).
+                </span>
+              </label>
+
+              <!-- Main Submit CTA Button -->
+              <button type="submit" class="confirm-btn" id="btnSubmitForm">
+                <div class="spinner" id="submitSpinner"></div>
+                <span id="submitBtnText">Confirm Payment & Get Tickets</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="site-footer">
+      <div class="footer-brand">Fursat-e-Barkat</div>
+      <p>"Fursat me kuch hone wala hai."</p>
+      <p style="margin-top: 0.4rem;">&copy; 2026 Fursat-e-Barkat &bull; Aatoli, Siliguri</p>
+      <div>
+        <a href="https://wa.me/919382259674" target="_blank" rel="noopener noreferrer" class="footer-help-link">
+          <span>Need help? Chat with Organizer on WhatsApp</span>
+        </a>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Floating WhatsApp Contact Button -->
+  <a href="https://wa.me/919382259674?text=Hi%2C%20I%20have%20a%20query%20regarding%20the%20Fursat-e-Barkat%20event."
+    target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn"
+    aria-label="Chat with Fursat-e-Barkat Organizer on WhatsApp" title="Chat with Organizer">
+    <svg class="whatsapp-float-icon" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.1-.476-.15-.676.15s-.777.978-.953 1.179-.351.226-.652.075c-.301-.15-1.27-.468-2.42-1.493-.895-.798-1.5-1.783-1.676-2.084-.176-.301-.019-.464.132-.614.135-.135.301-.351.451-.527.15-.175.2-.301.301-.501.1-.2.05-.376-.025-.526s-.677-1.632-.928-2.235c-.244-.587-.492-.507-.677-.517-.175-.01-.376-.01-.576-.01s-.527.075-.803.376c-.276.301-1.053 1.028-1.053 2.508s1.078 2.909 1.229 3.11c.15.2 2.122 3.24 5.141 4.544.718.31 1.279.496 1.716.635.722.23 1.378.197 1.9.12.58-.087 1.78-.727 2.03-1.43.25-.702.25-1.303.175-1.43-.075-.125-.276-.2-.576-.35z" />
+      <path
+        d="M12.004 0C5.372 0 0 5.373 0 12.004c0 2.116.553 4.184 1.604 6.007L.05 24l6.168-1.583a11.97 11.97 0 0 0 5.786 1.488h.005c6.632 0 12.005-5.373 12.005-12.005C24.014 5.373 18.641 0 12.004 0zm0 21.996h-.004a9.983 9.983 0 0 1-5.088-1.39l-.365-.216-3.778.97.986-3.684-.237-.378a9.98 9.98 0 0 1-1.53-5.294C2 6.489 6.49 2 12.004 2c2.673 0 5.187 1.042 7.078 2.933A9.95 9.95 0 0 1 22.014 12c0 5.515-4.49 9.996-10.01 9.996z" />
+    </svg>
+    <span class="whatsapp-float-text">Chat with us</span>
+  </a>
+
+  <!-- Notification Toast -->
+  <div class="toast-msg" id="toastBox" role="alert" aria-live="assertive">
+    <span>📋</span>
+    <span id="toastMessageText">UPI ID copied to clipboard!</span>
+  </div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT LOGIC & INTEGRATIONS
+       ========================================================================== -->
+  <script>
+    /**
+     * ============================================================================
+     * FURSAT-E-BARKAT - TICKETING, UPI QR & FORM SUBMISSION LOGIC
+     * ============================================================================
+     */
+
+    // Configuration Constants
+    const TICKET_BASE_PRICE = 189;
+    const MIN_TICKETS = 1;
+    const MAX_TICKETS = 5;
+    const UPI_ID = "mainakroy273@oksbi";
+    const PAYEE_NAME = "Fursat-e-Barkat";
+    const WHATSAPP_PHONE = "919382259674";
+
+    /**
+     * GOOGLE APPS SCRIPT WEBHOOK URL:
+     * Replace this placeholder with your deployed Google Apps Script Web App URL.
+     */
+    const GOOGLE_SCRIPT_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycby6zkDYn4VyVayLsEA7A5vMniveS1cnLXO_5rKU1n66JF293GXSGXk9xVVnxQq3FCtZ/exec";
+
+    // DOM Elements
+    const bookingForm = document.getElementById('ticketBookingForm');
+    const ticketInput = document.getElementById('ticketQuantity');
+    const btnMinus = document.getElementById('btnMinus');
+    const btnPlus = document.getElementById('btnPlus');
+    const finalAmountDisplay = document.getElementById('finalAmountDisplay');
+    const ticketMathSummary = document.getElementById('ticketMathSummary');
+    const freeTicketIndicator = document.getElementById('freeTicketIndicator');
+    const totalHelpText = document.getElementById('totalHelpText');
+    const upiQrBox = document.getElementById('upiQrBox');
+    const btnCopyUpiId = document.getElementById('btnCopyUpiId');
+    const btnSubmitForm = document.getElementById('btnSubmitForm');
+    const submitBtnText = document.getElementById('submitBtnText');
+    const toastBox = document.getElementById('toastBox');
+    const toastMessageText = document.getElementById('toastMessageText');
+
+    let qrCodeObj = null;
+
+    /**
+     * Calculate Tickets & Group Discounts
+     * Max: 5 tickets limit.
+     * Logic: For 5 tickets, 1 is free (4 paid + 1 free).
+     */
+    function computeTicketPricing(count) {
+      const tickets = Math.min(MAX_TICKETS, Math.max(MIN_TICKETS, parseInt(count, 10) || 1));
+      const freeTickets = Math.floor(tickets / 5);
+      const paidTickets = tickets - freeTickets;
+      const totalAmount = paidTickets * TICKET_BASE_PRICE;
+
+      return {
+        totalTickets: tickets,
+        freeTickets: freeTickets,
+        paidTickets: paidTickets,
+        totalAmount: totalAmount
+      };
+    }
+
+    /**
+     * Update Stepper Buttons Disabled/Enabled visual state
+     */
+    function updateStepperButtonsState(val) {
+      if (btnMinus) {
+        btnMinus.disabled = val <= MIN_TICKETS;
+        btnMinus.style.opacity = val <= MIN_TICKETS ? '0.4' : '1';
+        btnMinus.style.cursor = val <= MIN_TICKETS ? 'not-allowed' : 'pointer';
+      }
+      if (btnPlus) {
+        btnPlus.disabled = val >= MAX_TICKETS;
+        btnPlus.style.opacity = val >= MAX_TICKETS ? '0.4' : '1';
+        btnPlus.style.cursor = val >= MAX_TICKETS ? 'not-allowed' : 'pointer';
+      }
+    }
+
+    /**
+     * Dynamically generate guest name input fields for guests 2 to N
+     */
+    function updateGuestFields(ticketCount) {
+      const wrapper = document.getElementById('additionalGuestsWrapper');
+      const container = document.getElementById('additionalGuestsFields');
+      const guest1Label = document.getElementById('userNameLabelText');
+
+      if (guest1Label) {
+        guest1Label.textContent = ticketCount > 1 ? "Full Name (Guest 1 - Primary)" : "Full Name";
       }
 
-      document.getElementById('minusBtn').addEventListener('click', () => {
-        const current = Number(ticketCount.value) || 1;
-        ticketCount.value = Math.max(1, current - 1);
-        updateTotal();
+      if (ticketCount <= 1) {
+        if (wrapper) wrapper.style.display = 'none';
+        if (container) container.innerHTML = '';
+        return;
+      }
+
+      if (wrapper) wrapper.style.display = 'flex';
+
+      // Save currently entered values so user does not lose input on ticket adjustments
+      const existingValues = {};
+      for (let i = 2; i <= MAX_TICKETS; i++) {
+        const el = document.getElementById(`guestName${i}`);
+        if (el) {
+          existingValues[i] = el.value;
+        }
+      }
+
+      // Generate inputs for Guest 2 up to ticketCount
+      let html = '';
+      for (let i = 2; i <= ticketCount; i++) {
+        const safeVal = (existingValues[i] || '').replace(/"/g, '&quot;');
+        html += `
+          <div class="form-row">
+            <label for="guestName${i}" class="field-label">
+              <span>Full Name (Guest ${i})</span>
+              <span class="req">*</span>
+            </label>
+            <input type="text" id="guestName${i}" name="guest_${i}" class="text-input" placeholder="e.g. Guest ${i} Full Name" value="${safeVal}" required autocomplete="name" />
+          </div>
+        `;
+      }
+      if (container) {
+        container.innerHTML = html;
+      }
+    }
+
+    /**
+     * Update UI with dynamic calculation breakdown & update payment QR
+     */
+    function refreshTicketPricingUI() {
+      let rawCount = parseInt(ticketInput.value, 10);
+      if (isNaN(rawCount) || rawCount < MIN_TICKETS) {
+        rawCount = MIN_TICKETS;
+      } else if (rawCount > MAX_TICKETS) {
+        rawCount = MAX_TICKETS;
+      }
+      ticketInput.value = rawCount;
+      updateStepperButtonsState(rawCount);
+
+      const pricing = computeTicketPricing(rawCount);
+
+      // 1. Update large total price display
+      finalAmountDisplay.textContent = `₹${pricing.totalAmount}`;
+
+      // 2. Update math explanation & group badge
+      if (pricing.freeTickets > 0) {
+        ticketMathSummary.textContent = `${pricing.totalTickets} Tickets (${pricing.paidTickets} Paid + ${pricing.freeTickets} Free)`;
+        freeTicketIndicator.style.display = 'inline';
+        freeTicketIndicator.textContent = `🎁 1 Free Ticket Applied! (Saved ₹${pricing.freeTickets * TICKET_BASE_PRICE})`;
+        totalHelpText.textContent = `₹${pricing.totalAmount} for ${pricing.totalTickets} guests (Group offer applied)`;
+      } else {
+        ticketMathSummary.textContent = `${pricing.totalTickets} Ticket${pricing.totalTickets > 1 ? 's' : ''} × ₹${TICKET_BASE_PRICE}`;
+        freeTicketIndicator.style.display = 'none';
+        totalHelpText.textContent = `₹${pricing.totalAmount} for ${pricing.totalTickets} ${pricing.totalTickets === 1 ? 'guest' : 'guests'}`;
+      }
+
+      // 3. Update dynamic guest fields
+      updateGuestFields(rawCount);
+
+      // 4. Render UPI QR Code
+      generateQRCode(pricing.totalAmount);
+    }
+
+    /**
+     * Generate or update the dynamic UPI Payment QR Code
+     */
+    function generateQRCode(amount) {
+      const upiUrl = `upi://pay?pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent(PAYEE_NAME)}&am=${amount}&cu=INR&tn=${encodeURIComponent('Fursat-e-Barkat Tickets')}`;
+
+      upiQrBox.innerHTML = '';
+
+      if (typeof QRCode !== 'undefined') {
+        try {
+          qrCodeObj = new QRCode(upiQrBox, {
+            text: upiUrl,
+            width: 180,
+            height: 180,
+            colorDark: "#100c09",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.M
+          });
+        } catch (err) {
+          renderFallbackQR(upiUrl);
+        }
+      } else {
+        renderFallbackQR(upiUrl);
+      }
+    }
+
+    function renderFallbackQR(upiUrl) {
+      const img = document.createElement('img');
+      img.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(upiUrl)}`;
+      img.alt = "UPI Payment QR Code";
+      img.style.width = "180px";
+      img.style.height = "180px";
+      upiQrBox.appendChild(img);
+    }
+
+    /**
+     * Toast notification helper
+     */
+    function displayToast(msg) {
+      toastMessageText.textContent = msg;
+      toastBox.classList.add('show');
+      setTimeout(() => {
+        toastBox.classList.remove('show');
+      }, 3000);
+    }
+
+    // --- STEPPER BUTTON EVENTS ---
+    btnMinus.addEventListener('click', () => {
+      let val = parseInt(ticketInput.value, 10) || MIN_TICKETS;
+      if (val > MIN_TICKETS) {
+        ticketInput.value = val - 1;
+        refreshTicketPricingUI();
+      }
+    });
+
+    btnPlus.addEventListener('click', () => {
+      let val = parseInt(ticketInput.value, 10) || MIN_TICKETS;
+      if (val < MAX_TICKETS) {
+        ticketInput.value = val + 1;
+        refreshTicketPricingUI();
+      }
+    });
+
+    ticketInput.addEventListener('input', refreshTicketPricingUI);
+    ticketInput.addEventListener('change', refreshTicketPricingUI);
+
+    // --- COPY UPI ID BUTTON ---
+    btnCopyUpiId.addEventListener('click', () => {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(UPI_ID).then(() => {
+          displayToast('UPI ID copied: ' + UPI_ID);
+        }).catch(() => {
+          fallbackClipboardCopy(UPI_ID);
+        });
+      } else {
+        fallbackClipboardCopy(UPI_ID);
+      }
+    });
+
+    function fallbackClipboardCopy(text) {
+      const input = document.createElement('input');
+      input.value = text;
+      document.body.appendChild(input);
+      input.select();
+      try {
+        document.execCommand('copy');
+        displayToast('UPI ID copied: ' + text);
+      } catch (e) {
+        displayToast('UPI ID: ' + text);
+      }
+      document.body.removeChild(input);
+    }
+
+    // Realtime UTR input error clearing
+    const utrInputEl = document.getElementById('utrNumberInput');
+    const utrErrorBox = document.getElementById('utrErrorMessage');
+    if (utrInputEl) {
+      utrInputEl.addEventListener('input', () => {
+        if (utrErrorBox) utrErrorBox.style.display = 'none';
+        utrInputEl.style.borderColor = '';
       });
+    }
 
-      document.getElementById('plusBtn').addEventListener('click', () => {
-        const current = Number(ticketCount.value) || 1;
-        ticketCount.value = Math.min(5, current + 1);
-        updateTotal();
-      });
+    // --- FORM SUBMISSION (GOOGLE SHEETS + WHATSAPP REDIRECT) ---
+    bookingForm.addEventListener('submit', function (e) {
+      e.preventDefault();
 
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
+      const nameEl = document.getElementById('userName');
+      const emailEl = document.getElementById('userEmail');
+      const phoneEl = document.getElementById('userPhone');
+      const utrEl = document.getElementById('utrNumberInput');
+      const consentEl = document.getElementById('billingConsentCheckbox');
 
-        const name = document.getElementById('name').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const city = document.getElementById('city').value.trim();
-        const note = document.getElementById('note').value.trim();
-        const tickets = Number(ticketCount.value) || 1;
-        const total = tickets * pricePerTicket;
+      const name = nameEl.value.trim();
+      const email = emailEl.value.trim();
+      const phone = phoneEl.value.trim();
+      const utr = utrEl.value.trim();
+      const ticketCount = Math.min(MAX_TICKETS, Math.max(MIN_TICKETS, parseInt(ticketInput.value, 10) || 1));
 
-        if (!name || !phone) {
-          alert('Please fill in your name and phone number.');
+      // Reset any previous UTR error UI
+      if (utrErrorBox) {
+        utrErrorBox.style.display = 'none';
+        utrErrorBox.textContent = '';
+      }
+      utrEl.style.borderColor = '';
+
+      // 1. Validate Primary Guest Name
+      if (!name) {
+        alert(ticketCount > 1 ? 'Please enter the full name for Guest 1 (Primary).' : 'Please enter your full name.');
+        nameEl.focus();
+        return;
+      }
+
+      // 2. Validate Additional Guest Names (if more than 1 ticket)
+      const guestNames = [name];
+      for (let i = 2; i <= ticketCount; i++) {
+        const gEl = document.getElementById(`guestName${i}`);
+        const gVal = gEl ? gEl.value.trim() : '';
+        if (!gVal) {
+          alert(`Please enter the full name for Guest ${i}.`);
+          if (gEl) gEl.focus();
           return;
         }
+        guestNames.push(gVal);
+      }
 
-        const message = [
-          'Hi Fursat-e-Barkat,',
-          '',
-          'I want to book ' + tickets + ' ticket(s).',
-          'Name: ' + name,
-          'Phone: ' + phone,
-          city ? 'City: ' + city : '',
-          'Total: ₹' + total,
-          note ? 'Note: ' + note : '',
-          '',
-          'Please confirm my booking and tell me how to send the payment screenshot.'
-        ].filter(Boolean).join('\n');
+      // 3. Validate Contact & Verification Details
+      if (!email || !email.includes('@')) {
+        alert('Please enter a valid email address.');
+        emailEl.focus();
+        return;
+      }
+      if (!phone || phone.length < 8) {
+        alert('Please enter a valid WhatsApp phone number.');
+        phoneEl.focus();
+        return;
+      }
+      if (!utr || utr.length < 6) {
+        alert('Please enter the 12-digit UTR / Transaction ID from your payment.');
+        utrEl.focus();
+        return;
+      }
+      if (!consentEl.checked) {
+        alert('Please accept the entry fee and table billing agreement.');
+        consentEl.focus();
+        return;
+      }
 
-        const whatsappUrl = 'https://wa.me/919382259674?text=' + encodeURIComponent(message);
-        window.open(whatsappUrl, '_blank');
-      });
+      // Compute exact amount
+      const pricing = computeTicketPricing(ticketCount);
+      const calculatedAmount = pricing.totalAmount;
 
-      updateTotal();
-    </script>
-  </body>
+      // Fast Loading State
+      btnSubmitForm.disabled = true;
+      btnSubmitForm.classList.add('loading');
+      submitBtnText.textContent = "Verifying & Processing...";
+
+      // Formatted guest list for spreadsheet display
+      const guestNamesFormatted = guestNames.map((n, idx) => `${idx + 1}. ${n}`).join(', ');
+
+      // Payload for webhook
+      const payload = {
+        Name: name,
+        GuestNames: guestNamesFormatted,
+        Guest1: guestNames[0] || '',
+        Guest2: guestNames[1] || '',
+        Guest3: guestNames[2] || '',
+        Guest4: guestNames[3] || '',
+        Guest5: guestNames[4] || '',
+        Email: email,
+        Phone: phone,
+        Tickets: ticketCount,
+        PaidTickets: pricing.paidTickets,
+        FreeTickets: pricing.freeTickets,
+        TotalAmount: calculatedAmount,
+        UTR: utr,
+        Timestamp: new Date().toISOString()
+      };
+
+      // Construct WhatsApp Message
+      const guestListForWa = guestNames.map((n, idx) => `  ${idx + 1}. ${n}`).join('\n');
+      const attendeesBlock = ticketCount > 1
+        ? `Attendees (${ticketCount}):\n${guestListForWa}`
+        : `Attendee: ${name}`;
+
+      const waMessage =
+`Hi, I have made a payment for the Fursat-e-Barkat event.
+Primary Contact: ${name}
+${attendeesBlock}
+Email: ${email}
+Phone: ${phone}
+Tickets Booked: ${ticketCount}
+Total Amount Paid: ₹${calculatedAmount}
+UTR Number: ${utr}
+Please verify my payment and send my tickets.`;
+
+      const encodedMessage = encodeURIComponent(waMessage);
+      const waRedirectUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodedMessage}`;
+
+      // Optimized async submission with instant duplicate check response
+      fetch(GOOGLE_SCRIPT_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data && (data.status === 'error' || data.code === 'DUPLICATE_UTR')) {
+            // DUPLICATE UTR DETECTED: Show clear error in frontend
+            btnSubmitForm.disabled = false;
+            btnSubmitForm.classList.remove('loading');
+            submitBtnText.textContent = "Confirm Payment & Get Tickets";
+
+            if (utrErrorBox) {
+              utrErrorBox.style.display = 'block';
+              utrErrorBox.innerHTML = `⚠️ <strong>Duplicate UTR:</strong> ${data.message || 'This Transaction ID has already been used in a previous booking. Please check your payment receipt.'}`;
+            }
+            utrEl.style.borderColor = '#ef4444';
+            utrEl.focus();
+            displayToast('⚠️ This UTR was already used!');
+          } else {
+            // SUCCESS: Redirect instantly to WhatsApp
+            window.location.href = waRedirectUrl;
+          }
+        })
+        .catch((err) => {
+          console.warn('Direct read fallback (redirecting to WhatsApp):', err);
+          window.location.href = waRedirectUrl;
+        });
+    });
+
+    // Initialize UI on load
+    document.addEventListener('DOMContentLoaded', () => {
+      refreshTicketPricingUI();
+    });
+  </script>
+</body>
+
 </html>
